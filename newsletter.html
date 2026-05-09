@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Subscribe to The Nashville Crux — a monthly newsletter covering Nashville's climbing community events, routes, and culture." />
+  <title>The Newsletter — The Nashville Crux</title>
+
+  <!-- Favicon placeholder — replace with your own -->
+  <!-- <link rel="icon" href="images/favicon.ico" /> -->
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+       (same block used on every page; update is-active)
+  ════════════════════════════════════════════ -->
+  <nav class="nav" id="site-nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand logo-text">The Nashville Crux</a>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html"      class="nav__link">Home</a></li>
+        <li><a href="newsletter.html" class="nav__link is-active">Newsletter</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- END NAVIGATION -->
+
+
+  <!-- ═══════════════════════════════════════════
+       NEWSLETTER HERO / BANNER
+  ════════════════════════════════════════════ -->
+  <section class="nl-hero" aria-labelledby="nl-hero-heading">
+    <div class="container nl-hero__inner">
+
+      <div class="nl-hero__issue">
+        <span class="accent-label">Monthly Publication</span>
+      </div>
+
+      <h1 class="nl-hero__title" id="nl-hero-heading">
+        The <em>Newsletter</em>
+      </h1>
+
+      <p class="nl-hero__desc">
+        Every month we round up Nashville's best climbing events, competition 
+        results, new route announcements, and community stories — all in one 
+        free dispatch straight to your inbox.
+      </p>
+
+      <!-- Primary CTA — replace href with your Substack URL -->
+      <a href="#" class="btn btn--primary btn--lg" aria-label="Subscribe on Substack (opens external link)">
+        Subscribe on Substack
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+  <!-- END NEWSLETTER HERO -->
+
+
+  <!-- ═══════════════════════════════════════════
+       WHAT YOU GET — FEATURE CARDS
+  ════════════════════════════════════════════ -->
+  <section class="nl-features section" aria-labelledby="features-heading">
+    <div class="container">
+
+      <p class="section-label" id="features-heading">What's Inside</p>
+
+      <div class="nl-features__grid" role="list">
+
+        <article class="nl-feature-card" role="listitem">
+          <div class="nl-feature-card__icon" aria-hidden="true">🧗</div>
+          <h3 class="nl-feature-card__title">Event Calendar</h3>
+          <p class="nl-feature-card__body">
+            Local comps, gym socials, outdoor trips, and community meetups — 
+            curated and filtered so you never miss what's happening on the wall 
+            this month.
+          </p>
+        </article>
+
+        <article class="nl-feature-card" role="listitem">
+          <div class="nl-feature-card__icon" aria-hidden="true">📍</div>
+          <h3 class="nl-feature-card__title">Route &amp; Beta Roundup</h3>
+          <p class="nl-feature-card__body">
+            New routes set at Nashville gyms, seasonal conditions reports for 
+            nearby crags, and beta tips from local crushers worth paying 
+            attention to.
+          </p>
+        </article>
+
+        <article class="nl-feature-card" role="listitem">
+          <div class="nl-feature-card__icon" aria-hidden="true">✍️</div>
+          <h3 class="nl-feature-card__title">Community Spotlight</h3>
+          <p class="nl-feature-card__body">
+            Short profiles on coaches, routesetters, gym staff, and climbers 
+            making moves in the community — the people behind Nashville's 
+            growing climbing scene.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- END FEATURE CARDS -->
+
+
+  <!-- ═══════════════════════════════════════════
+       ISSUE PREVIEW PLACEHOLDER
+  ════════════════════════════════════════════ -->
+  <section class="nl-preview section" aria-label="Newsletter preview">
+    <div class="container container--narrow">
+
+      <p class="section-label">Latest Issue</p>
+
+      <div class="nl-preview__frame">
+        <div class="nl-preview__inner">
+          <span class="nl-preview__badge">Preview</span>
+          <h2 class="nl-preview__placeholder-title logo-text">
+            Issue Preview<br />Coming Soon
+          </h2>
+          <p class="nl-preview__placeholder-sub">
+            Your first issue preview will appear here once published on Substack.
+            <br />Add your archive embed or a screenshot of your latest issue.
+          </p>
+          <!-- Replace href with your real Substack URL -->
+          <a href="#" class="btn btn--ghost">
+            View on Substack →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END PREVIEW -->
+
+
+  <!-- ═══════════════════════════════════════════
+       SUBSCRIBE CTA
+  ════════════════════════════════════════════ -->
+  <section class="nl-subscribe section" aria-labelledby="subscribe-heading">
+    <div class="container container--narrow" style="text-align:center;">
+
+      <p class="section-label" style="justify-content:center;">Join the Community</p>
+
+      <h2 class="nl-subscribe__heading" id="subscribe-heading">
+        Free. Monthly. Always worth the read.
+      </h2>
+
+      <p class="nl-subscribe__sub">
+        No spam, no algorithms — just the best of Nashville climbing, once a month.
+      </p>
+
+      <!-- Replace href with your real Substack URL -->
+      <a href="#" class="btn btn--primary btn--lg">
+        Subscribe on Substack
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+  <!-- END SUBSCRIBE CTA -->
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER (same block used on every page)
+  ════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__brand logo-text">The Nashville Crux</span>
+        <span class="footer__tagline">Nashville's climbing community, in print.</span>
+        <span class="footer__copy">
+          &copy; <span id="footer-year"></span> The Nashville Crux. All rights reserved.
+        </span>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ════════════════════════════════════════════ -->
+  <script>
+    // ── Auto-update copyright year ──
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ── Mobile nav toggle ──
+    const toggle   = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('.nav__link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Scroll-aware nav background ──
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 60) {
+        nav.style.background = 'rgba(13,13,11,0.97)';
+      } else {
+        nav.style.background = '';
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
