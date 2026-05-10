@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Subscribe to The Nashville Crux — Nashville climbing events in your inbox every month." />
+  <title>Newsletter — The Nashville Crux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Special Elite', 'Courier New', monospace;
+      background-color: #e8d5c0;
+      color: #1a1108;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 28px,
+          rgba(160,120,80,0.04) 28px,
+          rgba(160,120,80,0.04) 29px
+        );
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(200,160,100,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 90%, rgba(180,140,90,0.2) 0%, transparent 50%);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Header — same as home */
+    .site-header {
+      position: relative;
+      text-align: center;
+      padding-top: 28px;
+      z-index: 10;
+    }
+    .site-title {
+      font-family: 'Bebas Neue', 'Impact', sans-serif;
+      font-size: clamp(3.2rem, 10vw, 6.2rem);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      color: #1a1108;
+      text-shadow: 1px 1px 0 rgba(80,50,20,0.3), -0.5px 0.5px 0 rgba(80,50,20,0.15);
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(20px, 5vw, 52px);
+      padding: 18px 0 10px;
+    }
+    .nav a {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.15em;
+      text-transform: lowercase;
+      color: #2a1a08;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+      position: relative;
+    }
+    .nav a:hover { opacity: 1; }
+    .nav a.active { color: #b85c1a; opacity: 1; font-weight: 600; }
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1.5px;
+      background: #b85c1a;
+    }
+
+    /* Newsletter content */
+    .nl-body {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .nl-display {
+      font-family: 'Bebas Neue', 'Impact', sans-serif;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: #1a1108;
+      margin-bottom: 28px;
+      text-shadow: 2px 2px 0 rgba(80,50,20,0.15);
+    }
+
+    .nl-desc {
+      font-family: 'Crimson Text', Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.65;
+      color: #2a1a08;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+    .nl-desc strong { font-weight: 600; }
+
+    /* Torn paper divider */
+    .torn-divider {
+      width: 100%;
+      height: 28px;
+      margin: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .torn-divider::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -2%; right: -2%;
+      height: 100%;
+      background: rgba(160,120,80,0.15);
+      clip-path: polygon(
+        0% 100%, 0% 60%, 2% 80%, 5% 55%, 8% 75%, 12% 50%, 16% 70%,
+        20% 48%, 24% 65%, 28% 45%, 32% 62%, 36% 42%, 40% 60%, 44% 40%,
+        48% 58%, 52% 38%, 56% 56%, 60% 36%, 64% 54%, 68% 34%, 72% 52%,
+        76% 32%, 80% 50%, 84% 30%, 88% 48%, 92% 28%, 96% 46%, 100% 60%,
+        100% 100%
+      );
+    }
+
+    /* Subscribe CTA section */
+    .nl-subscribe {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nl-subscribe-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b4c2a;
+      opacity: 0.7;
+    }
+
+    .btn-subscribe {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Caveat', cursive;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1a1108;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      min-width: 180px;
+      min-height: 90px;
+    }
+    .btn-subscribe:hover { transform: scale(1.06) rotate(-1deg); }
+    .btn-subscribe:active { transform: scale(0.97); }
+    .btn-subscribe .blob-bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .btn-text { position: relative; z-index: 1; padding: 10px 28px 6px; }
+
+    .nl-note {
+      font-family: 'Crimson Text', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #6b4c2a;
+      opacity: 0.75;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding-top: 48px;
+      z-index: 8;
+      position: relative;
+    }
+    .footer-logo { width: clamp(48px, 8vw, 72px); margin: 0 auto 10px; opacity: 0.82; }
+    .footer-copy {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: #6b4c2a;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <h1 class="site-title">The Nashville Crux</h1>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">home</a>
+      <a href="newsletter.html" class="active">newsletter</a>
+      <a href="#" aria-label="About page coming soon">about</a>
+      <a href="#" aria-label="Contact page coming soon">contact</a>
+    </nav>
+  </header>
+
+  <main class="nl-body">
+    <h2 class="nl-display">THE NEWSLETTER</h2>
+
+    <p class="nl-desc">
+      Every month, <strong>The Nashville Crux</strong> lands in your inbox on the <strong>5th</strong> — 
+      packed with climbing events, gym news, outdoor conditions, and community stories from Nashville's climbing scene.
+    </p>
+
+    <div class="torn-divider" aria-hidden="true"></div>
+
+    <div class="nl-subscribe">
+      <p class="nl-subscribe-label">Read &amp; subscribe on Substack</p>
+
+      <!-- Replace href="#" with your real Substack URL -->
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-subscribe" aria-label="Subscribe on Substack, opens in new tab">
+        <svg class="blob-bg" viewBox="0 0 220 105" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 9 C35 2, 58 0, 82 3 C106 6, 130 2, 155 5 C174 8, 196 4, 208 13 C218 20, 216 35, 214 48 C212 63, 218 76, 210 87 C202 97, 182 102, 160 104 C136 107, 110 103, 84 105 C58 107, 34 104, 16 97 C2 90, 0 76, 2 62 C4 47, 0 32, 6 21 C10 14, 15 11, 20 9Z" fill="#7ecfdf" stroke="#1a1108" stroke-width="2"/>
+        </svg>
+        <span class="btn-text">subscribe</span>
+      </a>
+
+      <p class="nl-note">Free. No spam. Just climbing.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <img src="images/logo.png" class="footer-logo" alt="The Nashville Crux logo" />
+    <p class="footer-copy">&copy; <span id="yr"></span> THE NASHVILLE CRUX</p>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
